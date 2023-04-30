@@ -65,7 +65,7 @@
                                     <outlet property="ivCover" destination="Xdc-FT-trp" id="vha-ph-vlZ"/>
                                     <outlet property="lbConsole" destination="eje-CW-3zd" id="G0F-Ox-dDP"/>
                                     <outlet property="lbTitle" destination="1PS-gu-eD6" id="3ul-Hi-Hr6"/>
-                                    <segue destination="y1Z-Fd-WEQ" kind="show" trigger="accessoryAction" id="yae-4d-kpM"/>
+                                    <segue destination="y1Z-Fd-WEQ" kind="show" identifier="gameSegue" id="o6b-iQ-sGR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,7 +78,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j55-XQ-MkS">
                             <connections>
                                 <action selector="addConsole:" destination="mNH-dW-D2N" id="LfX-X8-Yu8"/>
-                                <segue destination="g6h-oO-aj2" kind="show" id="CNK-4j-8ag"/>
+                                <segue destination="g6h-oO-aj2" kind="show" identifier="newGameSegue" id="CNK-4j-8ag"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -187,7 +187,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lista de Plataformas" largeTitleDisplayMode="always" id="SNv-6K-3xN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1fA-6g-ojA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1fA-6g-ojA">
+                            <connections>
+                                <action selector="addConsole:" destination="ZC9-j1-Btr" id="OLv-As-1aD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dig-cq-zts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -239,8 +243,16 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yci-cv-jzc">
                                 <rect key="frame" x="16" y="371" width="361" height="378"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFp-cY-W6o">
+                                <rect key="frame" x="159" y="542.66666666666663" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Toque para adicionar a imagem de capa"/>
+                                <connections>
+                                    <action selector="addEditCover:" destination="g6h-oO-aj2" eventType="touchUpInside" id="ugZ-2J-lhH"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfu-k0-KUp">
-                                <rect key="frame" x="16" y="796" width="361" height="40"/>
+                                <rect key="frame" x="16" y="748" width="361" height="40"/>
                                 <color key="backgroundColor" name="main"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Y06-FA-4tz"/>
@@ -250,14 +262,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="ADICIONAR"/>
                                 <connections>
                                     <action selector="addEditGame:" destination="g6h-oO-aj2" eventType="touchUpInside" id="oHx-jd-0BE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFp-cY-W6o">
-                                <rect key="frame" x="159" y="542.66666666666663" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Toque para adicionar a imagem de capa"/>
-                                <connections>
-                                    <action selector="addEditCover:" destination="g6h-oO-aj2" eventType="touchUpInside" id="ugZ-2J-lhH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -273,7 +277,7 @@
                             <constraint firstItem="n9T-it-50R" firstAttribute="top" secondItem="EBs-NR-cz4" secondAttribute="bottom" constant="10" id="9z3-EL-IkB"/>
                             <constraint firstItem="fwG-dQ-UIN" firstAttribute="top" secondItem="Yd0-Ci-eHk" secondAttribute="bottom" constant="4" id="AY1-eg-gHy"/>
                             <constraint firstItem="fwG-dQ-UIN" firstAttribute="leading" secondItem="pKX-ny-OHV" secondAttribute="leading" constant="16" id="IyN-eW-hUh"/>
-                            <constraint firstAttribute="bottom" secondItem="kfu-k0-KUp" secondAttribute="bottom" constant="16" id="KeZ-UU-Ms0"/>
+                            <constraint firstAttribute="bottom" secondItem="kfu-k0-KUp" secondAttribute="bottom" constant="64" id="Le6-HH-aQW"/>
                             <constraint firstItem="EBs-NR-cz4" firstAttribute="leading" secondItem="pKX-ny-OHV" secondAttribute="leading" constant="16" id="QWG-D1-fcx"/>
                             <constraint firstItem="n9T-it-50R" firstAttribute="leading" secondItem="pKX-ny-OHV" secondAttribute="leading" constant="16" id="QkZ-nt-yR9"/>
                             <constraint firstItem="pKX-ny-OHV" firstAttribute="trailing" secondItem="Yd0-Ci-eHk" secondAttribute="trailing" constant="16" id="Qld-hS-EDi"/>
