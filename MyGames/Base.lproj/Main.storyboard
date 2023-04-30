@@ -249,13 +249,16 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ADICIONAR"/>
                                 <connections>
-                                    <action selector="addEditGame:" destination="g6h-oO-aj2" eventType="touchUpInside" id="ZPs-eO-jiM"/>
+                                    <action selector="addEditGame:" destination="g6h-oO-aj2" eventType="touchUpInside" id="oHx-jd-0BE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFp-cY-W6o">
                                 <rect key="frame" x="159" y="542.66666666666663" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Toque para adicionar a imagem de capa"/>
+                                <connections>
+                                    <action selector="addEditCover:" destination="g6h-oO-aj2" eventType="touchUpInside" id="ugZ-2J-lhH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pKX-ny-OHV"/>

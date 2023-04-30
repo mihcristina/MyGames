@@ -5,6 +5,7 @@
 //  Created by Michelli Cristina de Paulo Lima on 29/04/23.
 //
 
+import CoreData
 import UIKit
 
 class AddEditViewController: UIViewController {
@@ -16,21 +17,27 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var btCover: UIButton!
     @IBOutlet weak var ivCover: UIImageView!
 
+    var game: Game!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func addEditCover(_ sender: Any) {
     }
     
+    @IBAction func addEditGame(_ sender: Any) {
+        if game == nil {
+            game = Game(context: context)
+        }
+        game.title = tfTitle.text
+        game.releaseDate = dpReleaseDate.date
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
-    */
-
 }
